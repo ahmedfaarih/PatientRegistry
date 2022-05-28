@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Patient;
+use App\Http\Resources\AdrResource;
+use App\Models\Adr;
 use Illuminate\Http\Request;
-use App\Http\Resources\PatientResource;
 
-class PatientController extends Controller
+class AdrController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        return PatientResource::collection(Patient::all());
+        return AdrResource::collection(Adr::all());
     }
 
     /**
@@ -27,45 +27,40 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = Patient::create($request->validated());
-        return new PatientResource($patient);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Patient  $patient
+     * @param  \App\Models\Adr  $adr
      * @return \Illuminate\Http\Response
      */
-    public function show(Patient $patient)
+    public function show(Adr $adr)
     {
-        return new PatientResource($patient);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Patient  $patient
+     * @param  \App\Models\Adr  $adr
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request, Adr $adr)
     {
-        $patient->update($request->validated());
-
-        return new PatientResource($patient);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Patient  $patient
+     * @param  \App\Models\Adr  $adr
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patient $patient)
+    public function destroy(Adr $adr)
     {
-
-        $patient->delete();
-        return response()->noContent();
+        //
     }
 }

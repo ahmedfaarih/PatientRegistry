@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('patients', PatientController::class);
+Route::apiResource('adrs', \App\Http\Controllers\Api\AdrController::class);
