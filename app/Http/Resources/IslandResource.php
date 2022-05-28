@@ -14,10 +14,11 @@ class IslandResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
+       /* return [
             'id'=>$this->id,
             'atoll' => $this->atoll,
             'name' => $this->name,
-        ];
+        ];*/
+        return parent::toArray($request);
     }
 }

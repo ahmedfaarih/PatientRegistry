@@ -1,7 +1,7 @@
 <template>
     <button type="button" class="btn border border-success m-3"><router-link :to="{name:'patients.create'}">Add Patient </router-link></button>
     <button type="button" class="btn border border-success m-3">Add an Adress</button>
-    <button type="button" class="btn border border-success m-3">Add an Island</button>
+    <button type="button" class="btn border border-success m-3"><router-link :to="{name:'islands.create'}">Add an Island </router-link></button>
        <table class="table table-sm">
 
         <thead>
@@ -56,7 +56,7 @@
 
 <script>
 
-import usePatients from "../composables/patients";
+import usePatients from "../../composables/patients";
 import {onMounted} from "vue";
 
 export default{

@@ -8,8 +8,9 @@ Alpine.start();
 
 import { createApp } from 'vue'
 import router from './router/index';
-import PatientsIndex from './components/Patientsindex';
-import PatientsCreate from './components/Patientscreate';
+import PatientsIndex from './components/patients/Patientsindex';
+import PatientsCreate from './components/patients/Patientscreate';
+import IslandsCreate from './components/islands/Islandscreate';
 
 
 const app = createApp({
@@ -17,6 +18,7 @@ const app = createApp({
     components:{
         PatientsIndex,
         PatientsCreate,
+        IslandsCreate,
 
     }
 }).use(router).mount('#app');

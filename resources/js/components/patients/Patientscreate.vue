@@ -2,7 +2,7 @@
     <form>
         <div class="mb-3">
             <label for="" class="form-label">Full Name</label>
-            <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Date of birth</label>
@@ -10,7 +10,7 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">National ID card number</label>
-            <input type="email" class="form-control" id="example" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="example" aria-describedby="emailHelp">
         </div>
 
         <div class="mb-3">
@@ -30,7 +30,7 @@
 
 import {onMounted} from "vue";
 
-import useAdress from "../composables/adress";
+import useAdress from "../../composables/adress";
 
 export default{
     setup(){

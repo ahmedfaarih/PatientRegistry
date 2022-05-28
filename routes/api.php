@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\PatientController;
+use App\Http\Controllers\Api\IslandController;
+use App\Http\Controllers\Api\AdrController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('patients', PatientController::class);
-Route::apiResource('adrs', \App\Http\Controllers\Api\AdrController::class);
+Route::apiResource('adrs', AdrController::class);
+Route::apiResource('islands', IslandController::class);
