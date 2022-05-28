@@ -11,6 +11,6 @@ class Island extends Model
     protected $fillable = ['atoll', 'name'];
 
     public function adrs(){
-        return $this->hasMany(Adr::class,'adr_id');
+        return $this->hasMany(Adr::class);
     }
 }

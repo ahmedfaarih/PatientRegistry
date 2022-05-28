@@ -19,7 +19,11 @@
             <td>{{items.name}}</td>
             <td>{{items.dob}}</td>
             <td>{{items.national_id}}</td>
-            <td><button class="btn btn-info m-1 " type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View </button>
+
+            <td>
+                <button class="btn btn-info m-1 " type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View </button>
+                <button class="btn btn-warning m-1 " type="button" ><router-link :to="{name:'patients.edit', params:{id:items.id}}">Edit</router-link></button>
+
 
 
                 <!-- Modal -->
@@ -30,7 +34,8 @@
                                 <h5 class="modal-title" id="staticBackdropLabel">Adress details</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+                            <div v-if="items.adr !== null" class="modal-body">
+
                                 <h6>District : {{items.adr.district}}</h6>
                                 <h6>House : {{items.adr.house_name}}</h6>
                                 <h6>Atoll : {{items.adr.island.atoll}}</h6>

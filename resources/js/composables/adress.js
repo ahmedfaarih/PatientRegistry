@@ -8,6 +8,7 @@ export default function useAdress(){
         adress.value = response.data.data;
     }
 
+
     /*const destroyPatients = async (id)=>{
         await axios.delete('/api/patients/' + id);
     }*/

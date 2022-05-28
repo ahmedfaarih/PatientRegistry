@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Adr extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = ['name', 'district'];
 
     public function island(){
-        return $this->belongsTo(Island::class,'island_id','id');
+        return $this->belongsTo(Island::class,);
     }
     public function patients(){
-        return $this->hasMany(Adr::class,'user_id');
+        return $this->hasMany(Patient::class,);
     }
 }

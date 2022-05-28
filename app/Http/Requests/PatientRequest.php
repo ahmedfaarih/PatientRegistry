@@ -27,6 +27,7 @@ class PatientRequest extends FormRequest
             'name' => ['required', 'string'],
             'dob' => ['required','date' ],
             'national_id' => ['required', 'string'],
+
         ];
     }
 }

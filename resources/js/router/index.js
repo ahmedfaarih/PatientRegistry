@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import PatientsIndex from "../components/patients/Patientsindex";
 import PatientsCreate from "../components/patients/Patientscreate";
+import PatientsEdit from "../components/patients/Patientsedit";
 import IslandsCreate from "../components/islands/Islandscreate";
 
 
@@ -14,6 +15,12 @@ const routes = [
         path: "/patients/create",
         name: "patients.create",
         component: PatientsCreate,
+    },
+    {
+        path: "/patients/:id/edit",
+        name: "patients.edit",
+        component: PatientsEdit,
+        props:true,
     },
     {
         path: "/islands/create",
