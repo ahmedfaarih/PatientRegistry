@@ -1,4 +1,11 @@
 <template>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="">Patient Registry</a></li>
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+        </ol>
+    </nav>
     <button type="button" class="btn border border-success m-3"><router-link :to="{name:'patients.create'}">Add Patient </router-link></button>
     <button type="button" class="btn border border-success m-3">Add an Adress</button>
     <button type="button" class="btn border border-success m-3"><router-link :to="{name:'islands.create'}">Add an Island </router-link></button>

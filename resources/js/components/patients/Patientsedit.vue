@@ -23,8 +23,7 @@
 
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" v-model="patient.adr_id">
-                <option selected>Select Adress</option>
-                <option  v-for="items in adresses" value="{{items.id}}" >House => {{items.house_name }} | Atoll => {{items.island.atoll}} | Island => {{items.island.name}} </option>
+                <option  v-for="items in adresses" :value="items.id" >House => {{items.house_name }} | Atoll => {{items.island.atoll}} | Island => {{items.island.name}} </option>
             </select>
         </div>
 
