@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdrRequest;
 use App\Http\Resources\AdrResource;
 use App\Http\Resources\IslandResource;
+use App\Http\Resources\PatientResource;
 use App\Models\Adr;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class AdrController extends Controller
@@ -26,9 +29,10 @@ class AdrController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdrRequest $request)
     {
-        //
+        $adress = Adr::create($request->validated());
+        return new AdrResource($adress);
     }
 
     /**
@@ -49,9 +53,10 @@ class AdrController extends Controller
      * @param  \App\Models\Adr  $adr
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Adr $adr)
+    public function update(AdrRequest $request, Adr $adr)
     {
-        //
+        $adr->update($request->validated());
+        return new AdrResource($adr);
     }
 
     /**
@@ -62,6 +67,7 @@ class AdrController extends Controller
      */
     public function destroy(Adr $adr)
     {
-        //
+        $adr->delete();
+        return response()->noContent();
     }
 }

@@ -9,7 +9,7 @@ class Adr extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'district'];
+    protected $fillable = ['house_name', 'district','island_id'];
 
     public function island(){
         return $this->belongsTo(Island::class,);

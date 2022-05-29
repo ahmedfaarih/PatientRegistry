@@ -1,3 +1,5 @@
+import Adressescreate from "./components/adresses/Adressescreate";
+
 require('./bootstrap');
 
 import Alpine from 'alpinejs';
@@ -12,6 +14,7 @@ import PatientsIndex from './components/patients/Patientsindex';
 import PatientsCreate from './components/patients/Patientscreate';
 import Patientsshow from "./components/patients/Patientsshow";
 import IslandsCreate from './components/islands/Islandscreate';
+import AdressesCreate from './components/adresses/Adressescreate';
 
 
 const app = createApp({
@@ -21,6 +24,7 @@ const app = createApp({
         PatientsCreate,
         IslandsCreate,
         Patientsshow,
+        AdressesCreate,
 
     }
 }).use(router).mount('#app');

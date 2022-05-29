@@ -7,7 +7,7 @@
         </ol>
     </nav>
     <button type="button" class="btn border border-success m-3"><router-link :to="{name:'patients.create'}">Add Patient </router-link></button>
-    <button type="button" class="btn border border-success m-3">Add an Adress</button>
+    <button type="button" class="btn border border-success m-3"><router-link :to="{name:'adress.create'}">Add Adress </router-link></button>
     <button type="button" class="btn border border-success m-3"><router-link :to="{name:'islands.create'}">Add an Island </router-link></button>
        <table class="table table-sm">
 

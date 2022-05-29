@@ -26,6 +26,7 @@ class AdrRequest extends FormRequest
         return [
             'house_name' => ['required', 'string'],
             'district' => ['required', 'string'],
+            'island_id' => ['exists:islands,id'],
         ];
     }
 }
