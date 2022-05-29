@@ -24,6 +24,24 @@
         </div>
         <button type="submit" class="btn border-primary">Submit</button>
     </form>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Atoll Name</th>
+            <th scope="col">Island</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="items in island" :key="items.id">
+            <th scope="row">{{items.id}}</th>
+            <td>{{items.atoll}}</td>
+            <td>{{items.name}}</td>
+        </tr>
+
+        </tbody>
+    </table>
 </template>
 
 
@@ -33,27 +51,29 @@
 
 import useIslands from "../../composables/islands";
 import {reactive}  from "vue";
+import {onMounted} from "vue";
 
 
 export default{
     setup(){
-        const {errors,storeIslands}= useIslands();
+        const {errors,storeIslands,island,getIslands}= useIslands();
 
        const form = reactive({
             'atoll_name':'',
             'name':'',
         });
 
+        onMounted(getIslands);
+
        const saveIsland = async ()=>{
            await storeIslands({...form})
         }
-
-
 
         return {
             form,
             errors,
             saveIsland,
+            island,
         }
     }
 }

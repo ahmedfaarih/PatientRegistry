@@ -7,10 +7,10 @@ export default function useIslands(){
     const router = useRouter();
     const errors = ref('');
 
-    /*const getIslands = async ()=>{
+    const getIslands = async ()=>{
         let response = await axios.get('/api/islands');
         island.value = response.data.data;
-    }*/
+    }
     const storeIslands = async (data)=>{
         await axios.post('/api/islands/', data);
         await router.push({name:'patients.index'})
@@ -23,7 +23,7 @@ export default function useIslands(){
     return {
         island,
         errors,
-       /* getIslands,*/
+        getIslands,
         storeIslands,
 
     }
