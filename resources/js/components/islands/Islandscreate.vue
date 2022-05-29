@@ -39,7 +39,6 @@
             <td>{{items.atoll}}</td>
             <td>{{items.name}}</td>
         </tr>
-
         </tbody>
     </table>
 </template>

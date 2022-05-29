@@ -34,7 +34,7 @@ export default function useAdress(){
     const updateAdress = async (id)=>{
         errors.value=''
         try {
-            await axios.put('/api/adrs/' +id,patient.value);
+            await axios.put('/api/adrs/' +id,adress.value);
             await router.push({name:'patients.index'})
         }catch (e) {
             if(e.response.status===422){

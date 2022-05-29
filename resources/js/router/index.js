@@ -5,6 +5,7 @@ import PatientsEdit from "../components/patients/Patientsedit";
 import PatientsShow from "../components/patients/Patientsshow";
 import IslandsCreate from "../components/islands/Islandscreate";
 import AdressesCreate from "../components/adresses/Adressescreate";
+import AdressesEdit from "../components/adresses/Adressedit";
 
 
 const routes = [
@@ -28,6 +29,12 @@ const routes = [
         path: "/adress/create",
         name: "adress.create",
         component: AdressesCreate,
+    },
+    {
+        path: "/adress/edit",
+        name: "adress.edit",
+        component: AdressesEdit,
+        props: true,
     },
     {
         path: "/patients/:id/edit",
