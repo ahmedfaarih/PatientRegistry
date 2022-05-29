@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import PatientsIndex from "../components/patients/Patientsindex";
 import PatientsCreate from "../components/patients/Patientscreate";
 import PatientsEdit from "../components/patients/Patientsedit";
+import PatientsShow from "../components/patients/Patientsshow";
 import IslandsCreate from "../components/islands/Islandscreate";
 
 
@@ -10,6 +11,12 @@ const routes = [
         path: "/dashboard",
         name: "patients.index",
         component: PatientsIndex,
+    },
+    {
+        path: "/patients/:id/show",
+        name: "patients.show",
+        component: PatientsShow,
+        props: true,
     },
     {
         path: "/patients/create",

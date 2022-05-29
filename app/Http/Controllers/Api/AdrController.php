@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AdrResource;
+use App\Http\Resources\IslandResource;
 use App\Models\Adr;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,7 @@ class AdrController extends Controller
      */
     public function show(Adr $adr)
     {
-        //
+        return new AdrResource($adr);
     }
 
     /**

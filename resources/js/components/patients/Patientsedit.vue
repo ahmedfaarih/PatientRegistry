@@ -24,7 +24,7 @@
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" v-model="patient.adr_id">
                 <option selected>Select Adress</option>
-                <option  v-for="items in adress" value="{{items.id}}" >House => {{items.house_name }} | Atoll => {{items.island.atoll}} | Island => {{items.island.name}} </option>
+                <option  v-for="items in adresses" value="{{items.id}}" >House => {{items.house_name }} | Atoll => {{items.island.atoll}} | Island => {{items.island.name}} </option>
             </select>
         </div>
 
@@ -48,18 +48,19 @@ export default {
 
     setup(props){
         const {errors,patient, getPatient,updatePatient} = usePatients();
-        const {adress, getAdress}= useAdress();
+        const {adress,adresses, getAdresses}= useAdress();
 
         const savePatient = async ()=>{
             await updatePatient(props.id);
         }
 
-        onMounted(getAdress);
+        onMounted(getAdresses);
         onMounted(getPatient(props.id));
 
         return{
             errors,
             patient,
+            adresses,
             adress,
             savePatient,
         }

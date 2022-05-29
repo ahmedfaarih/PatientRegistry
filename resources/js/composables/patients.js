@@ -9,7 +9,7 @@ export default function usePatients(){
 
     const getPatients = async ()=>{
         let response = await axios.get('/api/patients');
-            patients.value = response.data.data;
+        patients.value = response.data.data;
     }
 
     const getPatient = async (id)=>{
@@ -18,7 +18,7 @@ export default function usePatients(){
     }
 
     const destroyPatients = async (id)=>{
-      await axios.delete('/api/patients/' + id);
+        await axios.delete('/api/patients/' + id);
     }
 
     const storePatients = async (data)=>{

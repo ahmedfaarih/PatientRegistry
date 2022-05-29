@@ -28,6 +28,7 @@ class PatientController extends Controller
      */
     public function store(PatientRequest $request)
     {
+
         $patient = Patient::create($request->validated());
         return new PatientResource($patient);
     }

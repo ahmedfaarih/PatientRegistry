@@ -6,7 +6,13 @@
             </p>
         </div>
     </div>
-
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="">Patient Registry</a></li>
+            <li class="breadcrumb-item"><a href="#">Islands</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add</li>
+        </ol>
+    </nav>
     <form @submit.prevent="saveIsland">
         <div class="mb-3">
             <label for="atoll" class="form-label">Atoll Name</label>

@@ -1,11 +1,11 @@
 <template>
-        <div v-if="errors">
+    <div v-if="errors">
         <div v-for="(v, k) in errors" :key="k" class="bg-red-500 text-white rounded font-bold mb-4 shadow-lg py-2 px-4 pr-0">
             <p v-for="error in v" :key="error" class="text-sm">
                 {{ error }}
             </p>
         </div>
-        </div>
+    </div>
     <form  @submit.prevent="savePatient">
         <div class="mb-3">
             <label for="name" class="form-label">Full Name</label>
@@ -23,7 +23,7 @@
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" v-model="form.adr_id">
                 <option selected>Select Adress</option>
-                <option  v-for="items in adress" value="{{items.id}}" >House => {{items.house_name }} | Atoll => {{items.island.atoll}} | Island => {{items.island.name}} </option>
+                <option  v-for="items in adresses" :value="items.id" >House => {{items.house_name }} | Atoll => {{items.island.atoll}} | Island => {{items.island.name}} </option>
             </select>
         </div>
 
@@ -42,14 +42,14 @@ import {onMounted} from "vue";
 export default{
     setup(){
         const {errors,storePatients}= usePatients();
-        const {adress, getAdress}= useAdress();
+        const {adresses, getAdresses}= useAdress();
 
-        onMounted(getAdress);
+        onMounted(getAdresses);
         const form = reactive({
             'name':'',
             'dob':'',
             'national_id':'',
-           'adr_id':'',
+            'adr_id':'',
         });
 
         const savePatient = async ()=>{
@@ -61,7 +61,7 @@ export default{
             form,
             errors,
             savePatient,
-            adress,
+            adresses,
 
         }
     }
