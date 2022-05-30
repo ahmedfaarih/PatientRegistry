@@ -8,15 +8,18 @@ export default function useAdress(){
     const errors = ref('');
     const router = useRouter();
 
-    const getAdresses = async ()=>{
-        let response = await axios.get('/api/adrs');
-        adresses.value = response.data.data;
-    }
 
     const getAdress = async (id)=>{
         let response = await axios.get('/api/adrs/'+id);
         adress.value = response.data.data;
     }
+
+    const getAdresses = async ()=>{
+        let response = await axios.get('/api/adrs');
+        adresses.value = response.data.data;
+    }
+
+
 
     const storeAdress = async (data)=>{
         errors.value=''

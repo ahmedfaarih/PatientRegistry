@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import PatientsIndex from "../components/patients/Patientsindex";
 import PatientsCreate from "../components/patients/Patientscreate";
 import PatientsEdit from "../components/patients/Patientsedit";
-import PatientsShow from "../components/patients/Patientsshow";
+
 import IslandsCreate from "../components/islands/Islandscreate";
 import AdressesCreate from "../components/adresses/Adressescreate";
 import AdressesEdit from "../components/adresses/Adressedit";
@@ -14,12 +14,7 @@ const routes = [
         name: "patients.index",
         component: PatientsIndex,
     },
-    {
-        path: "/patients/:id/show",
-        name: "patients.show",
-        component: PatientsShow,
-        props: true,
-    },
+
     {
         path: "/patients/create",
         name: "patients.create",

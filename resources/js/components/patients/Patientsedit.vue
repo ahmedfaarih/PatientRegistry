@@ -1,4 +1,12 @@
 <template>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="">Patient Registry</a></li>
+            <li class="breadcrumb-item"><a href="#">Patients</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add</li>
+        </ol>
+    </nav>
+
     <div v-if="errors">
         <div v-for="(v, k) in errors" :key="k" class="bg-red-500 text-white rounded font-bold mb-4 shadow-lg py-2 px-4 pr-0">
             <p v-for="error in v" :key="error" class="text-sm">

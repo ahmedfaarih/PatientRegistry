@@ -18,6 +18,7 @@
             <th scope="col">Date of Birth</th>
             <th scope="col">ID card Number</th>
             <th scope="col">Adress</th>
+            <th scope="col">Manage</th>
         </tr>
         </thead>
         <tbody>
@@ -26,10 +27,10 @@
             <td>{{items.name}}</td>
             <td>{{items.dob}}</td>
             <td>{{items.national_id}}</td>
+            <td>{{items.adr.district}} | {{items.adr.house_name}} | {{items.adr.island.name}}</td>
 
             <td>
-                <button class="btn btn-info m-1 " type="button" > <router-link :to="  {name:'patients.show', params:{id:items.id}}">View</router-link></button>
-                <button class="btn btn-warning m-1 " type="button" ><router-link :to="{name:'patients.edit', params:{id:items.id}}">Edit</router-link></button>
+              <button class="btn btn-warning m-1 " type="button" ><router-link :to="{name:'patients.edit', params:{id:items.id}}">Edit</router-link></button>
             <button @click="deletePatient(items.id)" class="m-1 btn btn-danger">Delete</button></td>
         </tr>
 
