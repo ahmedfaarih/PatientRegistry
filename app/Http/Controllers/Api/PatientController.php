@@ -70,4 +70,8 @@ class PatientController extends Controller
         $patient->delete();
         return response()->noContent();
     }
+
+    public function nameID(){
+        return nameIDResource::collection(Patient::all());
+    }
 }

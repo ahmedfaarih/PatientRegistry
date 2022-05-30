@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('islands', function (Blueprint $table) {
             $table->id();
-            $table->string('atoll');
+            $table->string('atoll')->unique();
             $table->string('name');
             $table->timestamps();
         });

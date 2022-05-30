@@ -24,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('patients', PatientController::class);
 Route::apiResource('adrs', AdrController::class);
 Route::apiResource('islands', IslandController::class);
+
+Route::get('nameID',PatientController::class);
